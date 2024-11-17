@@ -7,7 +7,9 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
 -- clear highlighted words
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
--- TODO: remap jk kj C-c to exit insert mode
+vim.keymap.set('i', 'jk', '<ESC>', { noremap = true, silent = true, desc = 'exit insert mode' })
+vim.keymap.set('i', 'kj', '<ESC>', { noremap = true, silent = true, desc = 'exit insert mode' })
+vim.keymap.set('i', '<C-c>', '<ESC>', { noremap = true, silent = true, desc = 'exit insert mode' })
 
 -- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
 -- or just use <C-\><C-n> to exit terminal mode
@@ -18,7 +20,7 @@ local opts = { noremap = true, silent = true }
 
 -- save file
 vim.keymap.set('n', '<C-s>', '<cmd> w <CR>', opts)
--- TODO: keymap for source file command so
+vim.keymap.set('n', '<leader>so', '<cmd> so % <cr>', { noremap = true, silent = false, desc = 'source file' })
 -- save file without auto-formatting
 vim.keymap.set('n', '<leader>nf', '<cmd>noautocmd w <CR>', opts)
 
