@@ -43,7 +43,18 @@ vim.keymap.set('n', '<S-Tab>', ':bprevious<CR>', { noremap = true, silent = true
 vim.keymap.set('n', '<leader>x', ':bdelete!<CR>', { noremap = true, silent = true, desc = 'close buffer' })
 vim.keymap.set('n', '<leader>b', '<cmd> enew <CR>', { noremap = true, silent = true, desc = 'new buffer' })
 vim.keymap.set('n', '<leader>sa', '<cmd>wa<CR>', { desc = 'Save all buffers' })
-vim.keymap.set('n', '<leader>bo', '<cmd>bufdo if bufnr("%") != bufnr("#") | bdelete | endif<CR>', { desc = 'Close other buffers' })
+vim.keymap.set('n', '<leader>bo', function()
+  local current = vim.api.nvim_get_current_buf()
+  for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+    if buf ~= current and vim.api.nvim_buf_is_loaded(buf) then
+      if vim.bo[buf].modified then
+        vim.notify('Unsaved buffer: ' .. vim.api.nvim_buf_get_name(buf), vim.log.levels.WARN)
+      else
+        vim.api.nvim_buf_delete(buf, {})
+      end
+    end
+  end
+end, { desc = 'Close other buffers' })
 
 -- Window management
 vim.keymap.set('n', '<leader>v', '<C-w>v', { noremap = true, silent = true, desc = 'split window vertically' })
