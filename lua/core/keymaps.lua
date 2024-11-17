@@ -15,6 +15,8 @@ vim.keymap.set('i', '<C-c>', '<ESC>', { noremap = true, silent = true, desc = 'e
 -- or just use <C-\><C-n> to exit terminal mode
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
+vim.keymap.set('n', '<leader>f', vim.lsp.buf.format, { desc = 'format document' })
+
 vim.keymap.set('n', '<C-s>', '<cmd> w <CR>', { noremap = true, silent = true, desc = 'save file' })
 vim.keymap.set('n', '<leader>so', '<cmd> so % <cr>', { noremap = true, silent = false, desc = 'source file' })
 vim.keymap.set('n', '<leader>nf', '<cmd>noautocmd w <CR>', { noremap = true, silent = true, desc = 'save file without auto-formatting' })
@@ -47,7 +49,7 @@ vim.keymap.set('n', '<leader>bo', '<cmd>bufdo if bufnr("%") != bufnr("#") | bdel
 vim.keymap.set('n', '<leader>v', '<C-w>v', { noremap = true, silent = true, desc = 'split window vertically' })
 vim.keymap.set('n', '<leader>h', '<C-w>s', { noremap = true, silent = true, desc = 'split window horizontally' })
 vim.keymap.set('n', '<leader>se', '<C-w>=', { noremap = true, silent = true, desc = 'make split windows equal width & height' })
-vim.keymap.set('n', '<leader>xs', ':close<CR>', { noremap = true, silent = true, desc = 'close current split window' })
+vim.keymap.set('n', '<leader>xs', ':close<CR>', { noremap = true, silent = true, desc = 'close current split' })
 
 -- Navigate between splits
 vim.keymap.set('n', '<M-Up>', ':wincmd k<CR>', { noremap = true, silent = true })
@@ -63,6 +65,7 @@ vim.keymap.set('n', '<leader>tp', ':tabp<CR>', { noremap = true, silent = true, 
 
 vim.keymap.set('n', '<leader>lw', '<cmd>set wrap!<CR>', { noremap = true, silent = true, desc = 'toggle line wrap' })
 vim.keymap.set('n', '<leader>ln', '<cmd>set number! <bar> set relativenumber!<CR>', { desc = 'Toggle line numbers' })
+vim.keymap.set('n', '<leader>X', '<cmd>!chmod +x %<CR>', { silent = true, desc = 'make file executable' })
 
 -- Stay in indent mode
 vim.keymap.set('v', '<', '<gv', { noremap = true, silent = true })
