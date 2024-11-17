@@ -15,22 +15,16 @@ vim.keymap.set('i', '<C-c>', '<ESC>', { noremap = true, silent = true, desc = 'e
 -- or just use <C-\><C-n> to exit terminal mode
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
--- save file
-vim.keymap.set('n', '<C-s>', '<cmd> w <CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<C-s>', '<cmd> w <CR>', { noremap = true, silent = true, desc = 'save file' })
 vim.keymap.set('n', '<leader>so', '<cmd> so % <cr>', { noremap = true, silent = false, desc = 'source file' })
--- save file without auto-formatting
-vim.keymap.set('n', '<leader>nf', '<cmd>noautocmd w <CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>nf', '<cmd>noautocmd w <CR>', { noremap = true, silent = true, desc = 'save file without auto-formatting' })
 
--- quit file
-vim.keymap.set('n', '<C-q>', '<cmd> q <CR>', { noremap = true, silent = true })
-
--- delete single character without copying into register
-vim.keymap.set('n', 'x', '"_x', { noremap = true, silent = true })
+vim.keymap.set('n', '<C-q>', '<cmd> q <CR>', { noremap = true, silent = true, desc = 'quit file' })
+vim.keymap.set('n', 'x', '"_x', { noremap = true, silent = true, desc = 'delete single character without copying into register' })
 
 -- Vertical scroll and center
 vim.keymap.set('n', '<C-d>', '<C-d>zz', { noremap = true, silent = true })
 vim.keymap.set('n', '<C-u>', '<C-u>zz', { noremap = true, silent = true })
-
 -- Find and center
 vim.keymap.set('n', 'n', 'nzzzv', { noremap = true, silent = true })
 vim.keymap.set('n', 'N', 'Nzzzv', { noremap = true, silent = true })
@@ -67,8 +61,8 @@ vim.keymap.set('n', '<leader>tx', ':tabclose<CR>', { noremap = true, silent = tr
 vim.keymap.set('n', '<leader>tn', ':tabn<CR>', { noremap = true, silent = true, desc = 'go to next tab' })
 vim.keymap.set('n', '<leader>tp', ':tabp<CR>', { noremap = true, silent = true, desc = 'go to previous tab' })
 
--- Toggle line wrapping
 vim.keymap.set('n', '<leader>lw', '<cmd>set wrap!<CR>', { noremap = true, silent = true, desc = 'toggle line wrap' })
+vim.keymap.set('n', '<leader>ln', '<cmd>set number! <bar> set relativenumber!<CR>', { desc = 'Toggle line numbers' })
 
 -- Stay in indent mode
 vim.keymap.set('v', '<', '<gv', { noremap = true, silent = true })
@@ -83,8 +77,6 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnos
 vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
--- toggle line numbers
-vim.keymap.set('n', '<leader>ln', '<cmd>set number! <bar> set relativenumber!<CR>', { desc = 'Toggle line numbers' })
 -- toggle spell check
 -- vim.keymap.set('n', '<leader>sp', '<cmd>set spell!<CR>', { desc = 'Toggle spell check' })
 -- toggle netRW
