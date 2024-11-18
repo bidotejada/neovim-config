@@ -6,7 +6,8 @@ return {
     config = function()
       vim.o.background = 'dark' -- Set the background to "dark" or "light"
       require('gruvbox').setup {
-        contrast = 'hard', -- Options: "soft", "medium", "hard"
+        contrast = 'hard', -- can be "hard", "soft" or empty string
+        terminal_colors = true, -- add neovim terminal colors
         palette_overrides = {
           -- Customize Gruvbox palette here if needed
         },
