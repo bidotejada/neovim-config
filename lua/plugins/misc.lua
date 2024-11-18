@@ -27,6 +27,11 @@ return {
       vim.keymap.set('n', '<leader>gP', function()
         vim.cmd 'Git pull'
       end, { desc = 'Git pull' })
+
+      -- pull and rebase
+      vim.keymap.set('n', '<leader>gr', function()
+        vim.cmd.Git { 'pull', '--rebase' }
+      end, { desc = 'pull rebase' })
     end,
   },
   {
