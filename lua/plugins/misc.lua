@@ -4,6 +4,7 @@ return {
     -- Detect tabstop and shiftwidth automatically
     'tpope/vim-sleuth',
   },
+  { 'christoomey/vim-tmux-navigator' },
   {
     'tpope/vim-fugitive',
     config = function()
