@@ -29,6 +29,7 @@ require('lazy').setup({
   require 'plugins.autopairs',
   require 'plugins/bufferline',
   require 'plugins/cmp',
+  require 'plugins/colorscheme',
   require 'plugins/comment',
   require 'plugins/conform',
   require 'plugins/gitsigns',
@@ -39,7 +40,6 @@ require('lazy').setup({
   require 'plugins.neo-tree',
   require 'plugins/telescope',
   require 'plugins/todo-comments',
-  require 'plugins/tokyonight',
   require 'plugins/treesitter',
   require 'plugins/which-key',
   defaults = {
