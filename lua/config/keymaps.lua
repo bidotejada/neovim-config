@@ -19,7 +19,7 @@ map('n', '<leader>sn', '<cmd>noautocmd w <CR>', { noremap = true, silent = true 
 -- quit file
 map('n', '<C-q>', '<cmd> q <CR>', { noremap = true, silent = true })
 
--- quit
+-- quit all
 map('n', '<leader>qq', '<cmd>qa<cr>', { desc = 'Quit All' })
 
 -- delete single character without copying into register
