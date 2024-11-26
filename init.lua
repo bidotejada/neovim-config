@@ -18,6 +18,7 @@ end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
+  require 'plugins.alpha',
   require 'plugins.autocompletion',
   require 'plugins.autoformat',
   require 'plugins.autopairs',

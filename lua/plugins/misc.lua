@@ -18,6 +18,14 @@ return {
       },
     },
   },
+  {
+    -- Powerful Git integration for Vim
+    'tpope/vim-fugitive',
+  },
+  {
+    -- GitHub integration for vim-fugitive
+    'tpope/vim-rhubarb',
+  },
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
@@ -66,4 +74,3 @@ return {
     end,
   },
 }
-
