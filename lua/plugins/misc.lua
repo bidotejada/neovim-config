@@ -21,6 +21,14 @@ return {
   {
     -- Powerful Git integration for Vim
     'tpope/vim-fugitive',
+    lazy = false,
+    config = function()
+      -- Add key mappings for vim-fugitive commands
+      vim.api.nvim_set_keymap('n', '<leader>gs', ':Git<CR>', { noremap = true, silent = true })
+      vim.api.nvim_set_keymap('n', '<leader>gc', ':Git commit<CR>', { noremap = true, silent = true })
+      vim.api.nvim_set_keymap('n', '<leader>gp', ':Git push<CR>', { noremap = true, silent = true })
+      vim.api.nvim_set_keymap('n', '<leader>gP', ':Git pull --rebase<CR>', { noremap = true, silent = true })
+    end,
   },
   {
     -- GitHub integration for vim-fugitive
